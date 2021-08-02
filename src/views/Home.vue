@@ -2,7 +2,12 @@
   <div class="mt-1">
     <h3>Hello Fahriz Dimasqy</h3>
     <p class="text--disabled">Let's gets something</p>
-    <v-sheet class="mx-auto" elevation="8" max-width="800">
+    <v-carousel :show-arrows="false" class="mb-3">
+      <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
+        <v-card></v-card>
+      </v-carousel-item>
+    </v-carousel>
+    <!-- <v-sheet class="mx-auto" elevation="8" max-width="800">
       <v-slide-group
         v-model="model"
         class="pa-4"
@@ -30,7 +35,7 @@
           </v-card>
         </v-slide-item>
       </v-slide-group>
-    </v-sheet>
+    </v-sheet> -->
 
     <v-sheet class="" max-width="700">
       <v-slide-group multiple show-arrows>
@@ -77,11 +82,34 @@
 .v-item-group.v-bottom-navigation {
   position: fixed !important;
 }
+
+.v-carousel {
+  height: 150px !important;
+  border-radius: 10px;
+}
+.v-carousel__controls {
+  background: none !important;
+}
 </style>
 <script>
 export default {
   name: "Home",
   data: () => ({
+    items: [
+      {
+        src:
+          "https://image.freepik.com/free-vector/flat-sale-banner-with-photo_23-2149026968.jpg",
+      },
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
+      },
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
+      },
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+      },
+    ],
     cards: [
       {
         title: "Apple Watch",
