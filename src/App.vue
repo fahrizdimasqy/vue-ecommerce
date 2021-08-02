@@ -4,7 +4,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-slide-y-transition mode="out-in">
         <v-text-field
-          class="mt-2"
+          class="mt-2 mr-3"
           hide-details
           append-icon="mdi-microphone"
           flat
@@ -31,7 +31,7 @@
       <v-navigation-drawer app v-model="drawer">
         <v-list>
           <div class="pa-2" v-if="guest">
-            <v-btn block color="primary" class="mb-1">
+            <v-btn block color="primary" class="mb-1" to="/login">
               <v-icon left>mdi-lock</v-icon>
               Login
             </v-btn>
@@ -75,13 +75,13 @@
       </v-navigation-drawer></v-card
     >
 
-    <v-content>
+    <v-main>
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
           <router-view></router-view>
         </v-slide-y-transition>
       </v-container>
-    </v-content>
+    </v-main>
     <v-bottom-navigation :value="value" color="primary">
       <v-btn>
         <v-icon>mdi-home</v-icon>
@@ -121,7 +121,7 @@ export default {
       { title: "Home", icon: "mdi-home", route: "/" },
       { title: "About", icon: "mdi-account", route: "/about" },
     ],
-    guest: false,
+    guest: true,
   }),
 };
 </script>

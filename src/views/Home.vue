@@ -36,7 +36,11 @@
         </v-slide-item>
       </v-slide-group>
     </v-sheet> -->
-
+    <div class="text-right mt-5 mb-2">
+      <v-btn small text to="/categories" class="black--text">
+        All Categories <v-icon>mdi-chevron-right</v-icon>
+      </v-btn>
+    </div>
     <v-sheet class="" max-width="700">
       <v-slide-group multiple show-arrows>
         <v-slide-item v-for="n in 25" :key="n" v-slot="{ active, toggle }">
@@ -53,7 +57,11 @@
         </v-slide-item>
       </v-slide-group>
     </v-sheet>
-
+    <div class="text-right mt-5">
+      <v-btn small text to="/products" class="blue--black">
+        All Product <v-icon>mdi-chevron-right</v-icon>
+      </v-btn>
+    </div>
     <v-row dense class="mt-2 mb-15">
       <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
         <v-card>
@@ -116,18 +124,6 @@ export default {
         price: "Rp. 1.50000",
         src:
           "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/5602db01-a34b-4820-bd24-2d62d14154ba/apple-watch-series-6-gps-with-nike-sport-band-40mm-space-gray-aluminum-case-65dvHn.png",
-        flex: 6,
-      },
-      {
-        title: "Adidas Neo Dailyjjj",
-        price: "Rp. 300.000",
-        src: "https://s0.bukalapak.com/img/53971606541/large/data.png",
-        flex: 6,
-      },
-      {
-        title: "Adidas Neo Dailyjjj",
-        price: "Rp. 300.000",
-        src: "https://s0.bukalapak.com/img/53971606541/large/data.png",
         flex: 6,
       },
       {
