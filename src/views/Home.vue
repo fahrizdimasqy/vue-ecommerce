@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-1">
     <h3>Hello Fahriz Dimasqy</h3>
     <p class="text--disabled">Let's gets something</p>
     <v-sheet class="mx-auto" elevation="8" max-width="800">
@@ -49,7 +49,7 @@
       </v-slide-group>
     </v-sheet>
 
-    <v-row dense class="mt-2">
+    <v-row dense class="mt-2 mb-15">
       <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
         <v-card>
           <v-img
@@ -59,16 +59,23 @@
             height="200px"
           >
           </v-img>
-          <v-card-title v-text="card.title"></v-card-title>
+          <v-card-title
+            class="d-inline-block text-truncate"
+            v-text="card.title"
+            style="max-width: 150px;"
+          ></v-card-title>
           <v-card-text v-text="card.price"></v-card-text>
         </v-card>
       </v-col>
     </v-row>
   </div>
 </template>
-<style scoped>
+<style>
 .v-application .elevation-8 {
   box-shadow: none !important;
+}
+.v-item-group.v-bottom-navigation {
+  position: fixed !important;
 }
 </style>
 <script>
@@ -79,13 +86,26 @@ export default {
       {
         title: "Apple Watch",
         price: "Rp. 1.50000",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        src:
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/5602db01-a34b-4820-bd24-2d62d14154ba/apple-watch-series-6-gps-with-nike-sport-band-40mm-space-gray-aluminum-case-65dvHn.png",
         flex: 6,
       },
       {
-        title: "Best airlines",
-        price: "Rp. 1.50000",
-        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        title: "Adidas Neo Dailyjjj",
+        price: "Rp. 300.000",
+        src: "https://s0.bukalapak.com/img/53971606541/large/data.png",
+        flex: 6,
+      },
+      {
+        title: "Adidas Neo Dailyjjj",
+        price: "Rp. 300.000",
+        src: "https://s0.bukalapak.com/img/53971606541/large/data.png",
+        flex: 6,
+      },
+      {
+        title: "Adidas Neo Dailyjjj",
+        price: "Rp. 300.000",
+        src: "https://s0.bukalapak.com/img/53971606541/large/data.png",
         flex: 6,
       },
     ],
