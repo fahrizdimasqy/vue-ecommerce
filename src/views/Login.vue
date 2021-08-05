@@ -1,9 +1,7 @@
 <template>
   <div>
-    <div>
-      <h1 class="mt-16" style="color:#1E88E5">Hello</h1>
-      <h3 class="text--disabled">Login first to continue</h3>
-    </div>
+    <h1 class="mt-16" style="color:#1E88E5">Hello</h1>
+    <h3 class="text--disabled">Login first to continue</h3>
     <form>
       <v-text-field
         v-model="email"
@@ -23,12 +21,10 @@
         class="input-group--focused"
         @click:append="show2 = !show2"
       ></v-text-field>
+      <p class="text-right text--disabled">Forgot Password</p>
 
-      <v-btn class="mr-4" @click="submit">
-        submit
-      </v-btn>
-      <v-btn @click="clear">
-        clear
+      <v-btn block color="primary" class="" @click="submit">
+        Login
       </v-btn>
     </form>
   </div>
@@ -41,6 +37,9 @@
   position: relative;
   z-index: 0;
   display: none !important;
+}
+.v-item-group.v-bottom-navigation {
+  display: none;
 }
 </style>
 <script>
