@@ -57,30 +57,64 @@
         </v-slide-item>
       </v-slide-group>
     </v-sheet>
-    <div class="text-right mt-5">
-      <v-btn small text to="/products" class="blue--black">
-        All Product <v-icon>mdi-chevron-right</v-icon>
-      </v-btn>
-    </div>
-    <v-row dense class="mt-2 mb-15">
-      <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-        <v-card>
-          <v-img
-            :src="card.src"
-            class="white--text align-end"
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="200px"
-          >
-          </v-img>
-          <v-card-title
-            class="d-inline-block text-truncate"
-            v-text="card.title"
-            style="max-width: 150px;"
-          ></v-card-title>
-          <v-card-text v-text="card.price"></v-card-text>
-        </v-card>
+    <v-container class="ma-0 pa-0 mt-2" grid-list-sm>
+      <div class="text-right mt-5">
+        <v-btn small text to="/products" class="blue--black">
+          All Product <v-icon>mdi-chevron-right</v-icon>
+        </v-btn>
+      </div>
+      <v-layout wrap>
+        <v-flex
+          class=" px-1 mb-4"
+          v-for="product in products"
+          :key="`product - ` + product.id"
+          xs6
+        >
+          <v-card>
+            <v-img
+              :src="product.image"
+              class="white--text align-end"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="200px"
+            >
+            </v-img>
+            <v-card-title
+              class="d-inline-block text-truncate"
+              v-text="product.title"
+              style="max-width: 150px;"
+            ></v-card-title>
+            <v-card-text v-text="product.price"></v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <!-- <v-row dense class="mt-2 mb-15">
+      <v-col
+        v-for="product in products"
+        :key="`product - ` + product.id"
+        :cols="product.flex"
+      >
+        <v-row no-gutters style="flex-wrap: nowrap;">
+          <v-col>
+            <v-card>
+              <v-img
+                :src="product.image"
+                class="white--text align-end"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                height="200px"
+              >
+              </v-img>
+              <v-card-title
+                class="d-inline-block text-truncate"
+                v-text="product.title"
+                style="max-width: 150px;"
+              ></v-card-title>
+              <v-card-text v-text="product.price"></v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-col>
-    </v-row>
+    </v-row> -->
   </div>
 </template>
 <style>
@@ -133,7 +167,29 @@ export default {
         flex: 6,
       },
     ],
+    products: [],
+    categories: [],
     model: null,
   }),
+  methods: {
+    setProduct(data) {
+      this.products = data;
+    },
+  },
+  created() {
+    console.log("get data products");
+    this.axios
+      .get("http://localhost:3000/best-products")
+      .then((response) => {
+        // let { data } = response.data;
+        // this.products = data;
+        this.setProduct(response.data);
+        console.log(response);
+      })
+      .catch((error) => {
+        let { responses } = error;
+        console.log(responses);
+      });
+  },
 };
 </script>

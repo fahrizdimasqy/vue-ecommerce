@@ -1,4 +1,34 @@
 {
+  "best-products": [
+    {
+      "id": 1,
+      "title": "Apple Watch Series 5",
+      "image": "https://cdn.eraspace.com/pub/media/catalog/product/i/b/ibx_apple_watch_series_5_sport_band_44mm_space_gray_aluminum_black_1_1.jpg",
+      "price": "7199000",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+    },
+    {
+      "id": 2,
+      "title": "Apple Watch Series 3",
+      "image": "https://cdn.eraspace.com/pub/media/catalog/product/i/b/ibx_apple_watch_series_3_42mm_sport_band_silver_1_1.jpg",
+      "price": " 3599000",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+    },
+    {
+      "id": 3,
+      "title": "Adidas Neo Daily",
+      "image": "https://s0.bukalapak.com/img/53971606541/large/data.png",
+      "price": "1199000",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+    },
+    {
+      "id": 4,
+      "title": "Trendy Adidas Original",
+      "image": "https://s1.bukalapak.com/img/11231864621/large/Sepatu_Pria___Sepatu_Sneakers___Sepatu_Adidas___Sepatu_Casua.png",
+      "price": "185000",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+    }
+  ],
   "products": [
     {
       "id": 1,
