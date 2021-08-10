@@ -2,22 +2,7 @@
   <v-app>
     <v-app-bar app color="white" light>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-slide-y-transition mode="out-in">
-        <v-text-field
-          class="mt-2 mr-3"
-          hide-details
-          append-icon="mdi-microphone"
-          flat
-          label="Search"
-          prepend-inner-icon="mdi-magnify"
-          solo-inverted
-          v-show="isSearch"
-        ></v-text-field>
-      </v-slide-y-transition>
       <v-spacer></v-spacer>
-      <v-btn icon @click="isSearch = !isSearch">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
       <v-btn icon>
         <v-badge color="orange" overlap>
           <template v-slot:badge>
@@ -116,7 +101,6 @@ export default {
   name: "App",
   data: () => ({
     drawer: false,
-    isSearch: false,
     menus: [
       { title: "Home", icon: "mdi-home", route: "/" },
       { title: "About", icon: "mdi-account", route: "/about" },
