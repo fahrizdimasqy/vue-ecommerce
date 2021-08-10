@@ -1,6 +1,18 @@
 <template>
   <div class="mt-1">
     <v-container class="ma-0 pa-0 mt-2" grid-list-sm>
+      <v-text-field
+        class="mt-2 mb-4"
+        hide-details
+        append-icon="mdi-microphone"
+        flat
+        label="Search"
+        prepend-inner-icon="mdi-magnify"
+        solo-inverted
+      ></v-text-field>
+      <v-subheader>
+        All Products
+      </v-subheader>
       <v-layout wrap>
         <v-flex
           class=" px-1 mb-4"
@@ -26,33 +38,6 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <!-- <v-row dense class="mt-2 mb-15">
-      <v-col
-        v-for="product in products"
-        :key="`product - ` + product.id"
-        :cols="product.flex"
-      >
-        <v-row no-gutters style="flex-wrap: nowrap;">
-          <v-col>
-            <v-card>
-              <v-img
-                :src="product.image"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="200px"
-              >
-              </v-img>
-              <v-card-title
-                class="d-inline-block text-truncate"
-                v-text="product.title"
-                style="max-width: 150px;"
-              ></v-card-title>
-              <v-card-text v-text="product.price"></v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row> -->
   </div>
 </template>
 <style>
@@ -73,11 +58,9 @@
 </style>
 <script>
 export default {
-  name: "Products",
+  name: "products",
   data: () => ({
     products: [],
-    categories: [],
-    model: null,
   }),
   methods: {
     setProduct(data) {

@@ -11,7 +11,6 @@
       prepend-inner-icon="mdi-magnify"
       solo-inverted
     ></v-text-field>
-
     <div class="text-right mt-5 mb-2">
       <v-btn small text to="/categories" class="black--text">
         All Categories <v-icon>mdi-chevron-right</v-icon>

@@ -49,6 +49,7 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
+
         <template v-slot:append v-if="!guest">
           <div class="pa-2">
             <v-btn block color="red" dark>
@@ -59,16 +60,15 @@
         </template>
       </v-navigation-drawer></v-card
     >
-
     <v-main>
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
-          <router-view></router-view>
+          <router-view> </router-view>
         </v-slide-y-transition>
       </v-container>
     </v-main>
     <v-bottom-navigation :value="value" color="primary">
-      <v-btn>
+      <v-btn to="/">
         <v-icon>mdi-home</v-icon>
       </v-btn>
 
