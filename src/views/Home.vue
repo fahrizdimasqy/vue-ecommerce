@@ -62,6 +62,7 @@
           </v-card>
         </v-flex>
       </v-layout>
+      <div class="mb-12"></div>
     </v-container>
   </div>
 </template>

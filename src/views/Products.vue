@@ -1,5 +1,8 @@
 <template>
-  <div class="mt-1">
+  <div>
+    <v-btn icon>
+      <v-icon>mdi-arrow-left</v-icon>
+    </v-btn>
     <v-container class="ma-0 pa-0 mt-2" grid-list-sm>
       <v-text-field
         class="mt-2 mb-4"
@@ -37,6 +40,7 @@
           </v-card>
         </v-flex>
       </v-layout>
+      <div class="mb-12"></div>
     </v-container>
   </div>
 </template>
