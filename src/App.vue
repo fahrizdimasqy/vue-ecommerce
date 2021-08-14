@@ -1,9 +1,23 @@
 <template>
   <v-app>
-    <v-app-bar app color="white" light>
+    <v-app-bar app color="white" light v-if="isHome">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <v-btn icon>
+        <v-badge color="orange" overlap>
+          <template v-slot:badge>
+            <span>3</span>
+          </template>
+          <v-icon>mdi-cart</v-icon>
+        </v-badge>
+      </v-btn>
+    </v-app-bar>
+    <v-app-bar color="white" v-else>
+      <v-btn icon @click.stop="$router.go(-1)">
+        <v-icon>mdi-arrow-left-circle</v-icon>
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn icon to="/about">
         <v-badge color="orange" overlap>
           <template v-slot:badge>
             <span>3</span>
@@ -99,6 +113,7 @@
 <script>
 export default {
   name: "App",
+  components: {},
   data: () => ({
     drawer: false,
     menus: [
@@ -106,6 +121,12 @@ export default {
       { title: "About", icon: "mdi-account", route: "/about" },
     ],
     guest: true,
+    value: 0,
   }),
+  computed: {
+    isHome() {
+      return this.$route.path === "/";
+    },
+  },
 };
 </script>

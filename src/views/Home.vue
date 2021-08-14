@@ -140,22 +140,16 @@ export default {
       },
     ],
     products: [],
-    categories: [],
     model: null,
   }),
-  methods: {
-    setProduct(data) {
-      this.products = data;
-    },
-  },
+
   created() {
     console.log("get data products");
     this.axios
       .get("http://localhost:3000/best-products")
       .then((response) => {
-        // let { data } = response.data;
-        // this.products = data;
-        this.setProduct(response.data);
+        let data = response.data;
+        this.products = data;
         console.log(response);
       })
       .catch((error) => {

@@ -1,8 +1,5 @@
 <template>
   <div>
-    <v-btn icon>
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
     <v-container class="ma-0 pa-0 mt-2" grid-list-sm>
       <v-text-field
         class="mt-2 mb-4"
@@ -45,7 +42,7 @@
   </div>
 </template>
 <style>
-.v-application .elevation-8 {
+/* .v-application .elevation-8 {
   box-shadow: none !important;
 }
 .v-item-group.v-bottom-navigation {
@@ -58,7 +55,7 @@
 }
 .v-carousel__controls {
   background: none !important;
-}
+} */
 </style>
 <script>
 export default {
@@ -66,20 +63,14 @@ export default {
   data: () => ({
     products: [],
   }),
-  methods: {
-    setProduct(data) {
-      this.products = data;
-    },
-  },
   created() {
     console.log("get data products");
     this.axios
-      .get("http://localhost:3000/products")
+      .get("http://localhost:3000/products?page1")
       .then((response) => {
-        // let { data } = response.data;
-        // this.products = data;
-        this.setProduct(response.data);
-        console.log(response);
+        let data = response.data;
+        this.products = data;
+        console.log(data);
       })
       .catch((error) => {
         let { responses } = error;
