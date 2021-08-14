@@ -45,7 +45,7 @@
           :key="`product - ` + product.id"
           xs6
         >
-          <v-card>
+          <v-card :to="'/products/' + product.id">
             <v-img
               :src="product.image"
               class="white--text align-end"
@@ -150,7 +150,6 @@ export default {
       .then((response) => {
         let data = response.data;
         this.products = data;
-        console.log(response);
       })
       .catch((error) => {
         let { responses } = error;

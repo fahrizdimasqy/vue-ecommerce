@@ -109,6 +109,9 @@
 .v-list .v-list-item--active {
   color: blue;
 }
+.v-toolbar {
+  flex: none !important;
+}
 </style>
 <script>
 export default {

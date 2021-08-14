@@ -20,7 +20,7 @@
           :key="`product - ` + product.id"
           xs6
         >
-          <v-card>
+          <v-card to="/#">
             <v-img
               :src="product.image"
               class="white--text align-end"
