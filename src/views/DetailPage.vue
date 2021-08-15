@@ -9,7 +9,7 @@
         ></v-progress-linear>
       </template>
 
-      <v-img height="250" :src="product.image"></v-img>
+      <v-img :src="product.image"></v-img>
 
       <v-card-title>{{ product.title }}</v-card-title>
 
@@ -44,6 +44,7 @@
         </v-btn>
       </v-card-actions>
     </v-card>
+    <div class="mb-15"></div>
   </div>
 </template>
 <script>

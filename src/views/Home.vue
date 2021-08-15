@@ -3,6 +3,7 @@
     <h3>Hello Fahriz Dimasqy</h3>
     <p class="text--disabled">Let's gets something</p>
     <v-text-field
+      v-model="search"
       class="mt-2 mb-4"
       hide-details
       append-icon="mdi-microphone"
@@ -10,6 +11,7 @@
       label="Search"
       prepend-inner-icon="mdi-magnify"
       solo-inverted
+      @keyup="searchProduct"
     ></v-text-field>
     <div class="text-right mt-5 mb-2">
       <v-btn small text to="/categories" class="black--text">
@@ -32,7 +34,7 @@
         </v-slide-item>
       </v-slide-group>
     </v-sheet>
-    <v-container class="ma-0 pa-0 mt-2" grid-list-sm>
+    <div class="ma-0 pa-0 mt-2" grid-list-sm>
       <div class="text-right mt-5">
         <v-btn small text to="/products" class="blue--black">
           All Product <v-icon>mdi-chevron-right</v-icon>
@@ -63,7 +65,7 @@
         </v-flex>
       </v-layout>
       <div class="mb-12"></div>
-    </v-container>
+    </div>
   </div>
 </template>
 <style>
@@ -141,10 +143,23 @@ export default {
     ],
     products: [],
     model: null,
+    search: "",
   }),
-
+  methods: {
+    searchProduct() {
+      this.axios
+        .get("http://localhost:3000/best-products?q=" + this.search)
+        .then((response) => {
+          let data = response.data;
+          this.products = data;
+        })
+        .catch((error) => {
+          let { responses } = error;
+          console.log(responses);
+        });
+    },
+  },
   created() {
-    console.log("get data products");
     this.axios
       .get("http://localhost:3000/best-products")
       .then((response) => {

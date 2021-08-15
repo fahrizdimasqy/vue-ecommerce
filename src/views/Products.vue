@@ -9,6 +9,8 @@
         label="Search"
         prepend-inner-icon="mdi-magnify"
         solo-inverted
+        v-model="search"
+        @keyup="searchProduct"
       ></v-text-field>
       <v-subheader>
         All Products
@@ -62,7 +64,22 @@ export default {
   name: "products",
   data: () => ({
     products: [],
+    search: "",
   }),
+  methods: {
+    searchProduct() {
+      this.axios
+        .get("http://localhost:3000/best-products?q=" + this.search)
+        .then((response) => {
+          let data = response.data;
+          this.products = data;
+        })
+        .catch((error) => {
+          let { responses } = error;
+          console.log(responses);
+        });
+    },
+  },
   created() {
     console.log("get data products");
     this.axios
